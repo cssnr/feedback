@@ -1,0 +1,70 @@
+name: "Lint"
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: "Lint"
+    if: ${{ !contains(github.event.head_commit.message, '#nolint') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v6
+
+      - name: "Debug event.json"
+        continue-on-error: true
+        run: cat "${GITHUB_EVENT_PATH}"
+      - name: "Debug CTX github"
+        continue-on-error: true
+        env:
+          GITHUB_CTX: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CTX"
+
+      - name: "Setup Node 24"
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: "Install"
+        run: |
+          npm ci
+
+      - name: "Build"
+        if: ${{ !cancelled() }}
+        run: |
+          npm run build
+
+      - name: "eslint"
+        if: ${{ !cancelled() }}
+        run: |
+          npm run lint:check
+
+      - name: "prettier"
+        if: ${{ !cancelled() }}
+        run: |
+          npm run prettier:check
+
+      - name: "yamllint"
+        if: ${{ !cancelled() }}
+        env:
+          CONFIG: .github/yamllint.yaml
+        run: |
+          echo "::group::List Files"
+          yamllint -c "${{ env.CONFIG }}" --list-files .
+          echo "::endgroup::"
+          yamllint -c "${{ env.CONFIG }}" .
+
+      - name: "actionlint"
+        if: ${{ !cancelled() }}
+        uses: cssnr/actionlint-action@v1

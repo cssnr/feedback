@@ -1,0 +1,49 @@
+name: "Preview"
+
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore: [master]
+    paths:
+      - ".github/workflows/preview.yaml"
+      - "public/**"
+      - "src/**"
+      - "package*.json"
+      - "tsconfig.*"
+      - "index.html"
+      - "vite.config.ts"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: "Build"
+    if: ${{ !contains(github.event.head_commit.message, '#nopreview') }}
+    uses: cssnr/workflows/.github/workflows/npm-build.yaml@master
+    permissions:
+      contents: read
+    with:
+      build: "npm run build"
+      path: "dist"
+    secrets:
+      webhook: ${{ secrets.DISCORD_WEBHOOK }}
+
+  deploy:
+    name: "Deploy"
+    uses: cssnr/workflows/.github/workflows/deploy-static.yaml@master
+    needs: build
+    permissions:
+      contents: read
+    with:
+      name: "preview"
+      url: "https://dev-static.cssnr.com/feedback"
+      path: "feedback"
+      robots: true
+    secrets:
+      host: ${{ secrets.DEV_DEPLOY_HOST }}
+      port: ${{ secrets.DEV_DEPLOY_PORT }}
+      user: ${{ secrets.DEV_DEPLOY_USER }}
+      pass: ${{ secrets.DEV_DEPLOY_PASS }}
+      webhook: ${{ secrets.DISCORD_WEBHOOK }}

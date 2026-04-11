@@ -1,0 +1,94 @@
+// https://bootswatch.com/help/
+//@import 'bootswatch/dist/zephyr/variables';
+
+// https://getbootstrap.com/docs/5.3/layout/breakpoints/
+$grid-breakpoints: (
+  xs: 0,
+  // sm: 576px - default
+  sm: 536px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@import 'bootstrap/scss/bootstrap';
+//@import 'bootswatch/dist/zephyr/bootswatch';
+
+/* CSS for global */
+
+:root,
+[data-bs-theme='light'] {
+  --bs-emphasis-bg: var(--bs-white);
+  --bs-emphasis-bg-rgb: var(--bs-white-rgb);
+}
+
+[data-bs-theme='dark'] {
+  --bs-emphasis-bg: var(--bs-black);
+  --bs-emphasis-bg-rgb: var(--bs-black-rgb);
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@media (max-width: 575px) {
+  .nav-icons .nav-link {
+    padding-right: 7px;
+  }
+  .nav-icons .nav-item + .nav-item .nav-link {
+    padding-left: 7px;
+  }
+}
+@media (min-width: 576px) {
+  footer li + li::before {
+    content: '•';
+    margin-right: 0.3rem;
+  }
+}
+
+/* Grow */
+.hvr-grow-lg,
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s !important;
+  transition-property: transform !important;
+}
+.hvr-grow:hover {
+  transform: scale(1.1);
+}
+.hvr-grow-lg:hover {
+  transform: scale(1.2);
+}
+
+[data-bs-theme='dark'] .content-wrapper {
+  background-color: rgba(var(--bs-black-rgb), 0.5);
+  filter: drop-shadow(15px 15px 12px var(--bs-black));
+}
+[data-bs-theme='light'] .content-wrapper {
+  background-color: rgba(var(--bs-white-rgb), 0.5);
+}
+
+.form-control {
+  background-color: rgba(var(--bs-emphasis-bg-rgb), 0.5) !important;
+}
+
+/*header,*/
+/*footer {*/
+/*  backdrop-filter: blur(6px);*/
+/*  background-color: rgba(var(--bs-emphasis-bg-rgb), 0.5) !important;*/
+/*  !*z-index: 1;*!*/
+/*}*/
+
+//.heart:hover {
+//  color: #ff6433 !important;
+//}
+//.discord:hover {
+//  color: #7785cc !important;
+//}

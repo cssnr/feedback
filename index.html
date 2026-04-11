@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>%APP_TITLE%</title>
+
+    <link rel="icon" type="image/svg" sizes="any" href="/src/assets/logo.svg" />
+    <!--<link rel="icon" type="image/png" href="/src/assets/logo.png" />-->
+    <!--<link rel="apple-touch-icon" href="/src/assets/logo.png" />-->
+    <!--<link rel="icon" href="/favicon.ico" />-->
+
+    <!--<meta name="author" content="Shane" />-->
+    <!--<meta name="title" content="%APP_TITLE%" />-->
+    <!--<meta name="description" content="%APP_DESCRIPTION%" />-->
+
+    <!--<meta property="og:type" content="website" />-->
+    <!--<meta property="og:title" content="%APP_TITLE%" />-->
+    <!--<meta property="og:site_name" content="%APP_SUBTITLE%" />-->
+    <!--<meta property="og:description" content="%APP_DESCRIPTION%" />-->
+    <!--<meta property="og:image" content="/src/assets/logo.png" />-->
+    <!--<meta property="og:image:alt" content="%APP_TITLE%" />-->
+
+    <meta name="darkreader-lock" />
+
+    <script src="/theme.js"></script>
+  </head>
+  <body class="d-flex flex-column h-100">
+    <div id="app" class="d-flex h-100 flex-column"></div>
+    <script>
+      ;(function () {
+        const redirect = sessionStorage.redirect
+        delete sessionStorage.redirect
+        if (redirect && redirect !== location.href) {
+          console.log("index - history.replaceState:", redirect)
+          history.replaceState(null, null, redirect)
+        }
+      })()
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
