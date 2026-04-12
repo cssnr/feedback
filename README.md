@@ -31,6 +31,8 @@ More details coming soon...
 
 See [Vite Configuration Reference](https://vite.dev/config/).
 
+- https://vite.dev/guide/env-and-mode#env-files
+
 ### Project Setup
 
 ```sh
