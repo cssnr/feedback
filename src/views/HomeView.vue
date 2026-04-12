@@ -12,11 +12,13 @@ const name = url.searchParams.get('name') || ''
 console.log('name:', name)
 const version = url.searchParams.get('version') || 'unknown'
 console.log('version:', version)
-
-const id = camelCase(name)
+const id = url.searchParams.get('id') || 'unknown'
 console.log('id:', id)
 
-const app: App = apps[id as keyof typeof apps]
+const key = camelCase(name)
+console.log('key:', key)
+
+const app: App = apps[key as keyof typeof apps]
 console.log('app:', app)
 
 function processApp(app?: App) {
@@ -40,7 +42,7 @@ onUnmounted(() => {
 
 <template>
   <div class="container-fluid d-flex align-items-center justify-content-center h-100">
-    <FeedbackForm v-if="app" :app="app" />
+    <FeedbackForm v-if="app" :app="app" :version="version" :id="id" />
 
     <NotFound v-else :name="name" />
   </div>

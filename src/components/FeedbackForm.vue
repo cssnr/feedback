@@ -8,11 +8,11 @@ import SupportLinks from '@/components/SupportLinks.vue'
 
 const props = defineProps<{
   app: App
-  version?: string
+  version: string
+  id: string
 }>()
 
 const textArea = ref<HTMLTextAreaElement | null>(null)
-
 const inputText = ref('')
 
 const hasFocus = ref(false)
@@ -77,6 +77,7 @@ async function processForm() {
 
   const lines = [
     `**${props.app.name}** Uninstall, Version: \`${props.version}\``,
+    `**ID**: \`${props.id}\``,
     `**Browser**: ${ua.browser.name} ${ua.browser.major} (${ua.engine.name} - ${ua.browser.version})`,
     `**System**: ${ua.os.name} ${ua.os.version} (${ua.cpu.architecture})`,
     `${getIcon(values['not-used'])} Not Used`,
@@ -92,7 +93,14 @@ async function processForm() {
 
   // await new Promise((resolve) => setTimeout(resolve, 2000))
 
-  const response = await axios.post(appConfig.relay_url, { content })
+  // const data = { content, username: props.app.name }
+  const data = {
+    content,
+    username: props.app.name,
+    ...(props.app.icon?.endsWith('png') && { avatar_url: props.app.icon }),
+  }
+  console.debug('data:', data)
+  const response = await axios.post(appConfig.relay_url, data)
   console.debug('response:', response)
   console.debug('response.status:', response.status)
 
