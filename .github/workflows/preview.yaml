@@ -6,6 +6,7 @@ on:
     branches-ignore: [master]
     paths:
       - ".github/workflows/preview.yaml"
+      - ".env"
       - "public/**"
       - "src/**"
       - "package*.json"
