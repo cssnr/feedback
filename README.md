@@ -16,7 +16,7 @@
 # Feedback Vue
 
 <a title="Feedback Vue" href="https://github.com/cssnr/feedback?tab=readme-ov-file#readme" target="_blank">
-<img alt="Feedback Vue" align="right" width="128" height="auto" src="https://raw.githubusercontent.com/cssnr/feedback/master/src/images/logo128.png"></a>
+<img alt="Feedback Vue" align="right" width="128" height="auto" src="https://raw.githubusercontent.com/cssnr/feedback/master/src/assets/logo.svg"></a>
 
 - [Development](#development)
 - [Contributing](#contributing)
@@ -30,6 +30,8 @@ More details coming soon...
 # Development
 
 See [Vite Configuration Reference](https://vite.dev/config/).
+
+- https://vite.dev/guide/env-and-mode#env-files
 
 ### Project Setup
 
