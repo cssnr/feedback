@@ -8,8 +8,7 @@ import SupportLinks from '@/components/SupportLinks.vue'
 
 const props = defineProps<{
   app: App
-  version: string
-  id: string
+  params: Record<string, string>
 }>()
 
 const textArea = ref<HTMLTextAreaElement | null>(null)
@@ -76,8 +75,8 @@ async function processForm() {
   console.log('ua:', ua)
 
   const lines = [
-    `**${props.app.name}** Uninstall, Version: \`${props.version}\``,
-    `**ID**: \`${props.id}\``,
+    `**${props.app.name}** Uninstall, Version: \`${props.params['version']}\``,
+    `**ID**: \`${props.params['id']}\``,
     `**Browser**: ${ua.browser.name} ${ua.browser.major} (${ua.engine.name} - ${ua.browser.version})`,
     `**System**: ${ua.os.name} ${ua.os.version} (${ua.cpu.architecture})`,
     `${getIcon(values['not-used'])} Not Used`,
@@ -89,18 +88,18 @@ async function processForm() {
 
   const content = lines.join('\n')
   console.debug('content.length:', content.length)
-  console.debug('appConfig.relay_url:', appConfig.relay_url)
+  const relay_url = props.app.relay_url || appConfig.relay_url
+  console.debug('relay_url:', relay_url)
 
   // await new Promise((resolve) => setTimeout(resolve, 2000))
 
-  // const data = { content, username: props.app.name }
   const data = {
     content,
     username: props.app.name,
     ...(props.app.icon?.endsWith('png') && { avatar_url: props.app.icon }),
   }
   console.debug('data:', data)
-  const response = await axios.post(appConfig.relay_url, data)
+  const response = await axios.post(relay_url, data)
   console.debug('response:', response)
   console.debug('response.status:', response.status)
 
