@@ -21,7 +21,6 @@
     "animate.css": "^4.1.1",
     "axios": "^1.15.0",
     "bootstrap": "^5.3.8",
-    "camelcase": "^9.0.0",
     "ua-parser-js": "^2.0.9",
     "vue": "^3.5.32",
     "vue-router": "^5.0.4"

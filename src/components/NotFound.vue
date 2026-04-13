@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import appConfig from '@/config/app.ts'
 import IconLink from '@/components/IconLink.vue'
-// import { apps } from '@/config/apps.ts'
 
 defineProps<{
-  name: string
+  params: Record<string, string>
 }>()
 </script>
 
@@ -16,7 +15,7 @@ defineProps<{
       <div class="alert alert-danger my-2">Application Not Found</div>
       <img alt="404" src="/404.png" class="img-fluid my-2" />
       <p class="lead">
-        The application <b>{{ name }}</b> was not found.
+        The application <b>{{ params['name'] }}</b> was not found.
       </p>
       <p class="px-md-5">
         To find more applications visit the <a :href="appConfig.website_url" class="link-body-emphasis">Website</a>, or
@@ -25,13 +24,7 @@ defineProps<{
       </p>
     </div>
 
-    <!--<ul>-->
-    <!--  <li v-for="item in apps">-->
-    <!--    <a :href="item.github_url">{{ item.name }}</a>-->
-    <!--  </li>-->
-    <!--</ul>-->
-
-    <hr class="" />
+    <hr />
 
     <div class="row justify-content-center align-items-center fs-5">
       <IconLink :href="appConfig.discord_invite" fa="fa-brands fa-discord" class="col-auto hvr-grow discord"
