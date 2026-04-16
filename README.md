@@ -1,3 +1,5 @@
+[![Deployments GitHub Pages](https://img.shields.io/github/deployments/cssnr/feedback/github-pages?logo=github&logoColor=white&label=github-pages)](https://github.com/cssnr/feedback/deployments/github-pages)
+[![Deployments Preview](https://img.shields.io/github/deployments/cssnr/feedback/preview?logo=docker&logoColor=white&label=preview)](https://github.com/cssnr/feedback/deployments/preview)
 [![Workflow Pages](https://img.shields.io/github/actions/workflow/status/cssnr/feedback/pages.yaml?logo=norton&logoColor=white&label=pages)](https://github.com/cssnr/feedback/actions/workflows/pages.yaml)
 [![Workflow Preview](https://img.shields.io/github/actions/workflow/status/cssnr/feedback/preview.yaml?logo=norton&logoColor=white&label=preview)](https://github.com/cssnr/feedback/actions/workflows/preview.yaml)
 [![Workflow Lint](https://img.shields.io/github/actions/workflow/status/cssnr/feedback/lint.yaml?logo=norton&logoColor=white&label=lint)](https://github.com/cssnr/feedback/actions/workflows/lint.yaml)
