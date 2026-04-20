@@ -19,7 +19,7 @@
     "@tsparticles/slim": "^3.9.1",
     "@tsparticles/vue3": "^3.0.1",
     "animate.css": "^4.1.1",
-    "axios": "^1.15.0",
+    "axios": "^1.15.1",
     "bootstrap": "^5.3.8",
     "ua-parser-js": "^2.0.9",
     "vue": "^3.5.32",
@@ -33,14 +33,14 @@
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.7.0",
     "@vue/tsconfig": "^0.9.1",
-    "eslint": "^10.2.0",
+    "eslint": "^10.2.1",
     "eslint-plugin-vue": "~10.8.0",
     "jiti": "^2.6.1",
     "prettier": "3.8.3",
     "sass": "^1.99.0",
-    "typescript": "^6.0.2",
-    "vite": "^8.0.8",
-    "vue-tsc": "^3.2.6"
+    "typescript": "^6.0.3",
+    "vite": "^8.0.9",
+    "vue-tsc": "^3.2.7"
   },
   "engines": {
     "node": ">=22.12.0"

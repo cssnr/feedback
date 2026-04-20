@@ -46,9 +46,9 @@ export const apps = {
   'new-tab': {
     id: 'new-tab',
     name: 'New Tab Extension',
-    github_url: 'https://github.com/smashedr/new-tab',
-    icon: 'https://raw.githubusercontent.com/smashedr/new-tab/master/src/assets/icon.svg',
-    redirect_url: 'https://github.com/smashedr/new-tab/issues',
+    github_url: 'https://github.com/cssnr/new-tab',
+    icon: 'https://raw.githubusercontent.com/cssnr/new-tab/master/src/assets/icon.svg',
+    redirect_url: 'https://github.com/cssnr/new-tab/issues',
     broken_text: 'Just dont say Ralf broke it...',
   },
   'github-extension': {
