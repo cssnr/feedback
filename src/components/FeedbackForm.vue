@@ -170,7 +170,7 @@ onUnmounted(() => {
   >
     <div class="justify-content-center align-items-center d-flex">
       <a
-        :href="app.github_url"
+        :href="app.website_url || app.github_url"
         target="_blank"
         rel="noopener"
         class="d-flex align-items-center link-body-emphasis text-decoration-none hvr-grow"

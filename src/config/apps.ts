@@ -2,6 +2,7 @@ export interface App {
   name: string
   id: string
   github_url: string
+  website_url?: string
   icon?: string
   redirect_url?: string
   broken_text?: string
@@ -23,6 +24,7 @@ export const apps = {
     id: 'cache-cleaner',
     name: 'Cache Cleaner',
     github_url: 'https://github.com/cssnr/cache-cleaner',
+    website_url: 'https://cssnr.github.io/cache-cleaner/',
     icon: 'https://raw.githubusercontent.com/cssnr/cache-cleaner/master/.github/assets/logo.svg',
     redirect_url: 'https://github.com/cssnr/cache-cleaner/issues',
     broken_text: 'Please provide a link to the site that is not functioning.',
