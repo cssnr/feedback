@@ -16,7 +16,7 @@ export const apps = {
     id: 'auto-auth',
     name: 'Auto Auth',
     github_url: 'https://github.com/cssnr/auto-auth',
-    icon: 'https://raw.githubusercontent.com/cssnr/auto-auth/master/src/images/logo128.png',
+    icon: 'https://raw.githubusercontent.com/cssnr/auto-auth/master/src/assets/icon.svg',
     redirect_url: 'https://github.com/cssnr/auto-auth/issues',
     broken_text: 'Please provide a link to the site that is not functioning.',
   },
