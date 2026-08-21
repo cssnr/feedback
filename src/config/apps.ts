@@ -70,4 +70,13 @@ export const apps = {
     broken_text: 'Please provide a link to the site that is not functioning.',
     relay_url: 'https://relay.cssnr.com/discord/1376046470926438440',
   },
+  'zipline-android': {
+    id: 'zipline-android',
+    name: 'Zipline Android',
+    github_url: 'https://github.com/smashedr/zipline-android',
+    icon: 'https://zipline-android.cssnr.com/images/logo.png',
+    redirect_url: 'https://github.com/smashedr/zipline-android/issues',
+    broken_text: 'Please provide a link to the site that is not functioning.',
+    relay_url: 'https://relay.cssnr.com/discord/1376046470926438440',
+  },
 }

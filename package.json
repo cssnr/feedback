@@ -15,32 +15,33 @@
     "tsc": "vue-tsc --build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.2.0",
-    "@tsparticles/slim": "^3.9.1",
-    "@tsparticles/vue3": "^3.0.1",
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "@tsparticles/plugin-background-mask": "^4.3.2",
+    "@tsparticles/slim": "^4.3.2",
+    "@tsparticles/vue3": "^4.3.2",
     "animate.css": "^4.1.1",
-    "axios": "^1.15.2",
+    "axios": "^1.19.0",
     "bootstrap": "^5.3.8",
-    "ua-parser-js": "^2.0.9",
-    "vue": "^3.5.33",
-    "vue-router": "^5.0.6"
+    "ua-parser-js": "^2.0.10",
+    "vue": "^3.5.41",
+    "vue-router": "^5.2.0"
   },
   "devDependencies": {
-    "@tsconfig/node24": "^24.0.4",
-    "@types/bootstrap": "^5.2.10",
-    "@types/node": "^25.6.0",
-    "@vitejs/plugin-vue": "^6.0.6",
+    "@tsconfig/node24": "^24.0.5",
+    "@types/bootstrap": "^5.2.11",
+    "@types/node": "^26.2.0",
+    "@vitejs/plugin-vue": "^6.0.8",
     "@vue/eslint-config-prettier": "^10.2.0",
-    "@vue/eslint-config-typescript": "^14.7.0",
+    "@vue/eslint-config-typescript": "^14.9.0",
     "@vue/tsconfig": "^0.9.1",
-    "eslint": "^10.2.1",
-    "eslint-plugin-vue": "~10.9.0",
-    "jiti": "^2.6.1",
-    "prettier": "3.8.3",
-    "sass": "^1.99.0",
+    "eslint": "^10.9.0",
+    "eslint-plugin-vue": "~10.10.0",
+    "jiti": "^2.7.0",
+    "prettier": "3.9.6",
+    "sass": "^1.103.1",
     "typescript": "^6.0.3",
-    "vite": "^8.0.10",
-    "vue-tsc": "^3.2.7"
+    "vite": "^8.2.2",
+    "vue-tsc": "^3.3.11"
   },
   "engines": {
     "node": ">=22.12.0"

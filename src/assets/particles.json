@@ -14,7 +14,7 @@
     },
     "enable": true
   },
-  "clear": false,
+  "clear": true,
   "defaultThemes": {},
   "delay": 0,
   "fullScreen": {
@@ -22,6 +22,7 @@
     "zIndex": -1
   },
   "detectRetina": true,
+  "hdr": false,
   "duration": 0,
   "fpsLimit": 60,
   "interactivity": {
