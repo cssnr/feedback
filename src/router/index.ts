@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { apps } from '@/config/apps.ts'
 
 // https://router.vuejs.org/guide/
 const router = createRouter({
@@ -18,6 +19,14 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      component: HomeView,
+      meta: { hideHeader: true, hideFooter: true },
+    },
+    {
+      // Path based app routing: /feedback/zipline-android
+      // Custom regex only matches known app ids from src/config/apps.ts
+      path: `/:appName(${Object.keys(apps).join('|')})`,
+      name: 'app',
       component: HomeView,
       meta: { hideHeader: true, hideFooter: true },
     },

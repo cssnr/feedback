@@ -1,15 +1,20 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted } from 'vue'
+import { useRoute } from 'vue-router'
 import { type App, apps } from '@/config/apps.ts'
 import particlesConfig from '@/assets/particles.json'
 import FeedbackForm from '@/components/FeedbackForm.vue'
 import NotFound from '@/components/NotFound.vue'
 
+const route = useRoute()
 const url = new URL(window.location.href)
 console.log('url:', url)
 const params = Object.fromEntries(url.searchParams.entries())
 console.log('params:', params)
-const app: App = apps[params['name'] as keyof typeof apps]
+// Support path based app ids (/feedback/zipline-android) or query string (?name=zipline-android)
+const appId = (route.params.appName as string) || params['name']
+console.log('appId:', appId)
+const app: App = apps[appId as keyof typeof apps]
 console.log('app:', app)
 
 onMounted(() => {

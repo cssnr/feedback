@@ -9,6 +9,7 @@
     "dev": "vite",
     "lint": "eslint . --cache --fix",
     "lint:check": "eslint . --cache",
+    "prettier": "npm run prettier:write",
     "prettier:write": "npx prettier --write .",
     "prettier:check": "npx prettier --check .",
     "preview": "vite preview",
