@@ -184,7 +184,7 @@ onUnmounted(() => {
     <hr class="my-2" />
 
     <div class="text-center">
-      <p class="lead">Please let us know why you uninstalled {{ app.name }}.</p>
+      <p class="lead">{{ app.lead_text || `Please let us know why you uninstalled ${app.name}.` }}</p>
 
       <!--<p class="mb-1 fs-3 animate__animated animate__delay-1s" :class="{ animate__shakeX: hasFocus }">-->
       <p>
