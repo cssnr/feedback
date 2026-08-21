@@ -7,11 +7,13 @@ export interface App {
   redirect_url?: string
   broken_text?: string
   relay_url?: string
+  lead_text?: string
 }
 
 // export type App = (typeof apps)[keyof typeof apps]
 
 export const apps = {
+  // Web Extensions
   'auto-auth': {
     id: 'auto-auth',
     name: 'Auto Auth',
@@ -69,5 +71,15 @@ export const apps = {
     redirect_url: 'https://github.com/smashedr/wxt-extension/issues',
     broken_text: 'Please provide a link to the site that is not functioning.',
     relay_url: 'https://relay.cssnr.com/discord/1376046470926438440',
+  },
+  // Android Applications
+  'zipline-android': {
+    id: 'zipline-android',
+    name: 'Zipline Android',
+    github_url: 'https://github.com/smashedr/zipline-android',
+    icon: 'https://zipline-android.cssnr.com/images/logo.png',
+    redirect_url: 'https://github.com/smashedr/zipline-android/issues',
+    broken_text: 'Please let us know exactly what went wrong...',
+    lead_text: 'Please let us know what went wrong (or right) with the application.',
   },
 }
